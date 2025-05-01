@@ -8,7 +8,7 @@ const HomeLayout = () => {
             <header className='text-center'>
                 <Header></Header>
             </header>
-            <main>
+            <main className='max-w-sm mx-auto'>
                 <section className="left_nav"></section>
                 <section className="main">
                     <Outlet></Outlet>
