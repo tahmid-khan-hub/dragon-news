@@ -1,10 +1,11 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
 
   const {signIn} = use(AuthContext);
+  const [error, setError] = useState("");
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -27,7 +28,8 @@ const Login = () => {
      })
      .catch(err=>{
       console.log(err.message);
-      alert(err.message)
+      // alert(err.message)
+      setError(err.message)
      })
 
   }
@@ -47,6 +49,8 @@ const Login = () => {
             </div>
             
             <button type="submit" className="btn btn-neutral mt-4">Login</button>
+
+            {error && <p className="text-red-400 font-semibold mt-4">{error}</p>}
 
             <p className="font-semibold text-center mt-4">Don't Have An Account? <Link className="text-secondary" to="/auth/register">Register</Link></p>
           </form>
