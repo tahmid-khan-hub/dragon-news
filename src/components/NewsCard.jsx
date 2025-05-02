@@ -2,9 +2,11 @@ import { FaEye } from 'react-icons/fa';
 import { AiFillStar } from 'react-icons/ai';
 import { CiBookmark } from "react-icons/ci";
 import { IoShareSocialOutline } from 'react-icons/io5';
+import { Link } from 'react-router';
 
 const NewsCard = ({ news }) => {
   const {
+    id,
     title,
     author,
     thumbnail_url,
@@ -43,7 +45,8 @@ const NewsCard = ({ news }) => {
       {/* Details */}
       <div className="px-4 py-3 text-sm text-gray-700">
         {details.length > 150 ? details.slice(0, 150) + '...' : details}
-        <span className="text-orange-600 font-semibold cursor-pointer ml-1">Read More</span>
+        <Link to={`/news-details/${id}`} className="text-orange-600 font-semibold cursor-pointer ml-1">Read More</Link>
+        
       </div>
 
       {/* Footer: Rating and Views */}
