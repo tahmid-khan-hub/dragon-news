@@ -28,7 +28,7 @@ const Navbar = () => {
             </div>
 
             <div className='login-btn flex gap-4'>
-                <img src={userIcon} alt="" />
+                <img className='w-11 h-11 rounded-full object-cover' src={`${user ? user.photoURL : userIcon}`} alt="" />
                 {user? <button onClick={handleLogOut} className='btn btn-primary px-5'>Log Out</button> : <Link to="/auth/login"><button className='btn btn-primary px-5'>Login</button></Link>}
                 
             </div>
