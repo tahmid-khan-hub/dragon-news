@@ -14,6 +14,8 @@ const router = createBrowserRouter(
         {
             path: '/',
             element: <HomeLayout></HomeLayout>,
+            loader: ()=> fetch("/news.json"),
+            hydrateFallbackElement:<Loading></Loading>,
             children: [
                 {
                     path: '',

@@ -6,7 +6,7 @@ const CategoryNews = () => {
     const {id} = useParams();
     const data = useLoaderData();
 
-    console.log(id, data);
+    // console.log(id, data);
 
     const [categoryNews, setCategoryNews] = useState([]);
 
@@ -40,7 +40,7 @@ const CategoryNews = () => {
         <div>
             <div className='grid grid-cols-1 gap-5'>
                 {
-                    categoryNews.map(news => <NewsCard key={id} news={news}></NewsCard>)
+                    categoryNews.map((news,index) => <NewsCard key={index} news={news}></NewsCard>)
                 }
             </div>
         </div>
